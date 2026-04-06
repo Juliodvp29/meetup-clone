@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Event } from '@app/core/models/event';
 
 @Component({
@@ -10,4 +11,10 @@ import { Event } from '@app/core/models/event';
 })
 export class EventCardComponent {
   event = input.required<Event>();
+
+  router = inject(Router);
+
+   goToDetail() {
+    this.router.navigate(['/events', this.event().id]);
+  }
 }
