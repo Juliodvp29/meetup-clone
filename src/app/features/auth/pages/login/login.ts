@@ -1,5 +1,5 @@
 import { AuthService } from '@/app/core/services/auth';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
@@ -17,6 +17,14 @@ export class LoginComponent {
 
   email = '';
   password = '';
+
+  constructor() {
+    effect(() => {
+      if (this.auth.isLoggedIn()) {
+        this.router.navigate(['/']);
+      }
+    });
+  }
 
   login() {
     this.auth.login(this.email, this.password);
