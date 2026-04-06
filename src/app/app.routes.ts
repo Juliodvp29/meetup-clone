@@ -17,10 +17,11 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () => import('./features/auth/pages/login/login').then((m) => m.LoginComponent),
   },
-  {
-    path: 'profile',
-    loadComponent: () =>
-      import('./features/profile/pages/profile/profile').then((m) => m.ProfileComponent),
-    canActivate: [authGuard],
-  },
+ {
+  path: 'dashboard',
+  canActivate: [authGuard],
+  loadComponent: () =>
+    import('./features/dashboard/pages/dashboard/dashboard')
+      .then(m => m.DashboardComponent)
+}
 ];

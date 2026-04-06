@@ -21,13 +21,13 @@ export class LoginComponent {
   constructor() {
     effect(() => {
       if (this.auth.isLoggedIn()) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
       }
     });
   }
 
   login() {
     this.auth.login(this.email, this.password);
-    this.router.navigate(['/']);
+    this.router.navigate(['/dashboard']);
   }
 }
