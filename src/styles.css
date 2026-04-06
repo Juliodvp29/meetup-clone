@@ -1,3 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "primeicons/primeicons.css";
 
-@import 'tailwindcss';
+:root {
+  --color-primary: #2e2efa;
+  --color-primary-hover: #1f1fe0;
+
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f9fafb;
+
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+
+  --color-border: #e5e7eb;
+
+  --radius-md: 12px;
+
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.08);
+}
