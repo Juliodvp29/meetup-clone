@@ -1,0 +1,95 @@
+<section class="min-h-screen bg-slate-50 py-10 sm:py-14">
+  <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 xl:grid-cols-[0.6fr_0.4fr] xl:items-center xl:gap-10">
+    <div class="hidden xl:block relative overflow-hidden bg-linear-to-br from-primary via-indigo-700 to-slate-950 p-8 text-white sm:p-10 xl:min-h-180 xl:p-12 xl:rounded-4xl xl:shadow-[0_28px_90px_rgba(15,23,42,0.18)]">
+      <div class="absolute -top-16 -left-16 h-48 w-48 rounded-full bg-white/10 blur-3xl"></div>
+      <div class="absolute -bottom-14 -right-10 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
+
+      <div class="relative z-10 flex h-full flex-col justify-between gap-10">
+        <div class="space-y-3">
+          <span class="block text-xs font-semibold uppercase tracking-[0.28em] text-white/80">meetup</span>
+          <p class="text-sm text-white/75">Sign in to your account</p>
+        </div>
+
+        <div class="space-y-6">
+          <h1 class="max-w-xl text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl">Find your next event.</h1>
+          <p class="max-w-xl text-base leading-8 text-white/80 sm:text-lg">
+            Connect with people who share your passions. Discover thousands of events worldwide.
+          </p>
+        </div>
+
+        <ul class="space-y-4 text-sm font-semibold text-white/90 sm:text-base">
+          <li class="flex items-center gap-3"><i class="pi pi-map-marker text-lg"></i>142+ cities</li>
+          <li class="flex items-center gap-3"><i class="pi pi-users text-lg"></i>2M+ members</li>
+          <li class="flex items-center gap-3"><i class="pi pi-calendar text-lg"></i>50K+ events per month</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center xl:py-16">
+      <div class="w-full max-w-md bg-white px-6 py-10 sm:px-8 sm:py-12 xl:rounded-4xl xl:shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold tracking-tight text-slate-950">Welcome back!</h2>
+          <p class="text-sm leading-7 text-slate-600">Enter your details to sign in</p>
+        </div>
+
+        <form class="mt-8 space-y-5" (ngSubmit)="login()" autocomplete="off">
+          <label class="block space-y-3 text-sm font-medium text-slate-900">
+            <span>Email address</span>
+            <input
+              pInputText
+              type="email"
+              placeholder="you@example.com"
+              [(ngModel)]="email"
+              name="email"
+              required
+              class="w-full rounded-[22px] border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 placeholder:text-slate-400 transition focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-100"
+            />
+          </label>
+
+          <label class="block space-y-3 text-sm font-medium text-slate-900">
+            <div class="flex items-center justify-between gap-4">
+              <span>Password</span>
+              <a href="#" class="text-sm font-semibold text-indigo-600 transition hover:text-indigo-700">Forgot password?</a>
+            </div>
+            <input
+              pInputText
+              type="password"
+              placeholder="********"
+              [(ngModel)]="password"
+              name="password"
+              required
+              class="w-full rounded-[22px] border border-slate-200 bg-slate-50 px-4 py-3 text-slate-950 placeholder:text-slate-400 transition focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-100"
+            />
+          </label>
+
+          <button
+            pButton
+            type="submit"
+            label="Sign in"
+            style="background-color:#2e2efa;border-color:#2e2efa"
+            class="w-full rounded-3xl border-none bg-indigo-600 text-white shadow-lg transition duration-200 hover:bg-indigo-700"
+            [disabled]="!email || !password"
+          ></button>
+        </form>
+
+        <div class="my-6 flex items-center gap-3 text-sm text-slate-400">
+          <span class="h-px flex-1 bg-slate-200"></span>
+          <span>or</span>
+          <span class="h-px flex-1 bg-slate-200"></span>
+        </div>
+
+        <button
+          pButton
+          type="button"
+          label="Continue with Google"
+          icon="pi pi-google"
+          class="w-full rounded-3xl border border-slate-200 bg-white text-slate-900 shadow-sm transition hover:bg-slate-50"
+        ></button>
+
+        <p class="mt-6 text-center text-sm text-slate-500">
+          Don’t have an account? <a href="#" class="font-semibold text-indigo-600 transition hover:text-indigo-700">Sign up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

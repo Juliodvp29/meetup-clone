@@ -10,4 +10,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/event/pages/event-detail/event-detail').then((m) => m.EventDetailComponent),
   },
+  {
+  path: 'login',
+  loadComponent: () =>
+    import('./features/auth/pages/login/login').then(m => m.LoginComponent)
+}
 ];
