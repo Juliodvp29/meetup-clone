@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { DashboardProfileComponent } from '../../components/dashboard-profile/dashboard-profile';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [DashboardProfileComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
