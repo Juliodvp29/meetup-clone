@@ -1,0 +1,13 @@
+.home-search-input {
+  color-scheme: light;
+  -webkit-text-fill-color: #111827;
+  background-color: transparent !important;
+  color: #111827 !important;
+  caret-color: #111827;
+}
+
+.home-search-input::placeholder {
+  -webkit-text-fill-color: #9ca3af;
+  color: #9ca3af !important;
+  opacity: 1;
+}
