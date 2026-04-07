@@ -1,0 +1,51 @@
+<div class="bg-white rounded-[20px] p-4 flex items-center gap-4 sm:gap-6 border border-gray-100 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow relative overflow-hidden group">
+  
+  <div class="shrink-0">
+    <p-avatar 
+      [image]="event().image" 
+      shape="square" 
+      class="[&_.p-avatar]:!w-20 [&_.p-avatar]:!h-20 sm:[&_.p-avatar]:!w-24 sm:[&_.p-avatar]:!h-24 [&_.p-avatar]:!rounded-xl [&_.p-avatar]:!bg-gray-100"
+    ></p-avatar>
+  </div>
+
+  <div class="flex-grow flex flex-col justify-center min-w-0">
+    <div class="mb-1.5">
+       <p-tag [value]="event().category" [class]="event().category === 'Tech' ? '!bg-indigo-50 !text-indigo-600 !text-[11px] !font-bold !px-2.5 !py-0.5' : event().category === 'Design' ? '!bg-amber-50 !text-amber-600 !text-[11px] !font-bold !px-2.5 !py-0.5' : '!bg-rose-50 !text-rose-600 !text-[11px] !font-bold !px-2.5 !py-0.5'"></p-tag>
+    </div>
+    
+    <h3 class="text-[16px] sm:text-[17px] font-bold text-gray-900 leading-tight mb-1 truncate">
+      {{ event().title }}
+    </h3>
+    
+    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-gray-500 text-[12.5px] font-medium">
+      <div class="flex items-center gap-1.5 truncate">
+        <i class="pi pi-calendar text-[11px] text-gray-400"></i>
+        <span class="truncate">{{ event().date }}</span>
+      </div>
+      <div class="flex items-center gap-1.5 truncate">
+        <i class="pi pi-map-marker text-[11px] text-gray-400"></i>
+        <span class="truncate">{{ event().location }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shrink-0 flex items-center gap-2 sm:gap-4">
+    <div class="hidden sm:block">
+      <p-tag 
+         [value]="event().status" 
+         [icon]="event().status === 'Going' ? 'pi pi-check' : ''"
+         [class]="event().status === 'Going' ? '!bg-green-50 !text-green-600 !font-bold !rounded-full !px-4 !py-1.5 !text-[12.5px] [&_.pi]:!text-[10px]' : '!bg-orange-50 !text-orange-600 !font-bold !rounded-full !px-4 !py-1.5 !text-[12.5px]'"
+      ></p-tag>
+    </div>
+
+    <div class="sm:hidden">
+      <div class="w-3 h-3 rounded-full" [class.bg-green-500]="event().status === 'Going'" [class.bg-orange-400]="event().status !== 'Going'"></div>
+    </div>
+    
+    <button 
+      pButton 
+      icon="pi pi-times" 
+      class="!bg-red-50 hover:!bg-red-100 !text-red-500 !border-none !rounded-full !w-10 !h-10 transition-colors focus:!ring-0"
+    ></button>
+  </div>
+</div>
