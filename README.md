@@ -24,7 +24,7 @@
 Simulated authentication using localStorage
 
 ## Design
-[Figma link]
+[https://www.figma.com/design/kxxRTXaLEJnM9CVJh11IYf/Meetup-Clone?node-id=4-179&t=crnekm69WaSTuo2A-0]
 
 ## Run locally
 npm install  
