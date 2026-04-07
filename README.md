@@ -1,7 +1,7 @@
 # Meetup Clone
 
 ## Live Demo
-[link aquí]
+https://meetup-clone-three.vercel.app/
 
 ## Stack
 - Angular 21 (Signals, Control Flow)
