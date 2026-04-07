@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Event } from '@app/core/models/event';
 import { DashboardProfileComponent } from '../../components/dashboard-profile/dashboard-profile';
@@ -12,9 +12,12 @@ import { DashboardGroupItemComponent } from '../../components/dashboard-group-it
   imports: [CommonModule, DashboardProfileComponent, DashboardStatsComponent, DashboardEventItemComponent, DashboardGroupItemComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent {
   
+  activeTab = signal<'events' | 'groups' | 'saved'>('events');
+
   events = signal<Event[]>([
     {
       id: 'd1',

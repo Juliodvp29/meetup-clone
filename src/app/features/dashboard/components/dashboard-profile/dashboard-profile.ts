@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, type WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
@@ -9,4 +9,9 @@ import { ButtonModule } from 'primeng/button';
   templateUrl: './dashboard-profile.html',
 })
 export class DashboardProfileComponent {
+  @Input() activeTab!: WritableSignal<'events' | 'groups' | 'saved'>;
+
+  changeTab(tab: 'events' | 'groups' | 'saved') {
+    this.activeTab.set(tab);
+  }
 }

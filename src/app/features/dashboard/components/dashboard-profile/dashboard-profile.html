@@ -30,9 +30,39 @@
   </div>
 
   <div class="md:hidden flex px-6 pt-1 space-x-8 overflow-x-auto text-[14.5px] font-bold w-full bg-white relative z-10 border-b border-gray-200">
-      <button pButton class="!px-0 !pb-3.5 !pt-3 !bg-transparent !border-0 !border-b-[2.5px] !border-[#353cf4] !text-[#353cf4] !rounded-none whitespace-nowrap shadow-none focus-visible:!outline-none">My Events</button>
-      <button pButton class="!px-0 !pb-3.5 !pt-3 !bg-transparent !border-0 !border-b-[2.5px] !border-transparent !text-gray-400 hover:!text-gray-600 !rounded-none whitespace-nowrap transition-colors shadow-none focus-visible:!outline-none">Groups</button>
-      <button pButton class="!px-0 !pb-3.5 !pt-3 !bg-transparent !border-0 !border-b-[2.5px] !border-transparent !text-gray-400 hover:!text-gray-600 !rounded-none whitespace-nowrap transition-colors shadow-none focus-visible:!outline-none">Saved</button>
+      <button 
+        pButton 
+        (click)="changeTab('events')"
+        [class.!border-[#353cf4]]="activeTab() === 'events'"
+        [class.!text-[#353cf4]]="activeTab() === 'events'"
+        [class.!border-transparent]="activeTab() !== 'events'"
+        [class.!text-gray-400]="activeTab() !== 'events'"
+        class="!px-0 !pb-3.5 !pt-3 !bg-transparent !border-0 !border-b-[2.5px] !rounded-none whitespace-nowrap shadow-none focus-visible:!outline-none transition-colors"
+      >
+        My Events
+      </button>
+      <button 
+        pButton 
+        (click)="changeTab('groups')"
+        [class.!border-[#353cf4]]="activeTab() === 'groups'"
+        [class.!text-[#353cf4]]="activeTab() === 'groups'"
+        [class.!border-transparent]="activeTab() !== 'groups'"
+        [class.!text-gray-400]="activeTab() !== 'groups'"
+        class="!px-0 !pb-3.5 !pt-3 !bg-transparent !border-0 !border-b-[2.5px] !rounded-none whitespace-nowrap hover:!text-gray-600 shadow-none focus-visible:!outline-none transition-colors"
+      >
+        Groups
+      </button>
+      <button 
+        pButton 
+        (click)="changeTab('saved')"
+        [class.!border-[#353cf4]]="activeTab() === 'saved'"
+        [class.!text-[#353cf4]]="activeTab() === 'saved'"
+        [class.!border-transparent]="activeTab() !== 'saved'"
+        [class.!text-gray-400]="activeTab() !== 'saved'"
+        class="!px-0 !pb-3.5 !pt-3 !bg-transparent !border-0 !border-b-[2.5px] !rounded-none whitespace-nowrap hover:!text-gray-600 shadow-none focus-visible:!outline-none transition-colors"
+      >
+        Saved
+      </button>
   </div>
 
   <nav class="hidden md:flex flex-col px-4 py-6 gap-1 w-full">
