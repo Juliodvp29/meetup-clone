@@ -108,7 +108,7 @@ export class HomeComponent {
       category: 'Learning',
       location: 'Online',
       date: 'May 20',
-      image: 'https://images.unsplash.com/photo-1475721027187-4001777ce157?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800'
     },
     {
       id: '13',
@@ -124,7 +124,7 @@ export class HomeComponent {
       category: 'Sports',
       location: 'Huila',
       date: 'May 25',
-      image: 'https://images.unsplash.com/photo-1547483167-73d8a9a468d6?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800'
     },
     {
       id: '15',
