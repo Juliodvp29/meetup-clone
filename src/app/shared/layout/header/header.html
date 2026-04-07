@@ -28,7 +28,16 @@
 
     <div class="md:hidden flex items-center gap-2">
       @if (auth.isLoggedIn()) {
-        <a routerLink="/dashboard" pButton icon="pi pi-home" [rounded]="true" [text]="true" severity="secondary" class="!text-gray-700 w-9 h-9"></a>
+        <a
+          routerLink="/dashboard"
+          pButton
+          [rounded]="true"
+          [text]="true"
+          aria-label="Go to dashboard"
+          class="!text-[#353cf4] w-9 h-9 inline-flex items-center justify-center"
+        >
+          <i class="pi pi-home text-base"></i>
+        </a>
         <button 
           pButton 
           icon="pi pi-sign-out" 

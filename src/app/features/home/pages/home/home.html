@@ -8,8 +8,8 @@
       Connect with people who share your passions. Discover events happening near you.
     </p>
 
-    <div class="flex items-center w-full max-w-3xl bg-white rounded-xl p-1.5 shadow-lg">
-      <div class="flex items-center grow pl-4">
+    <div class="flex w-full max-w-3xl flex-col gap-2 bg-white rounded-xl p-1.5 shadow-lg sm:flex-row sm:items-center sm:gap-0">
+      <div class="flex items-center grow pl-4 min-w-0">
         <i class="pi pi-search text-gray-400 text-lg"></i>
         <input
           pInputText
@@ -17,10 +17,10 @@
           placeholder="Search events, groups, cities..."
           [value]="searchTerm()"
           (input)="searchTerm.set($any($event.target).value)"
-          class="grow px-4 py-3 bg-transparent border-0! shadow-none! ring-0! text-gray-900 text-base placeholder:text-gray-400 focus:outline-none"
+          class="grow min-w-0 px-3 sm:px-4 py-3 bg-transparent border-0! shadow-none! ring-0! text-gray-900 text-base placeholder:text-gray-400 focus:outline-none"
         />
       </div>
-      <button pButton label="Search" class="px-10! py-3.5! rounded-lg! font-bold! bg-[#353cf4]! border-none! text-white! hover:bg-blue-800! transition-colors shadow-none"></button>
+      <button pButton label="Search" class="w-full sm:w-auto px-6 sm:px-10! py-3.5! rounded-lg! font-bold! bg-[#353cf4]! border-none! text-white! hover:bg-blue-800! transition-colors shadow-none"></button>
     </div>
   </div>
 </section>
