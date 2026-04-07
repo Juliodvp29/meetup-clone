@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { AuthService } from '@/app/core/services/auth';
@@ -9,6 +9,7 @@ import { AuthService } from '@/app/core/services/auth';
   imports: [ButtonModule, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   auth = inject(AuthService);
@@ -16,10 +17,6 @@ export class HeaderComponent {
 
   logout() {
     this.auth.logout();
-    this.router.navigate(['/login']);
-  }
-
-  login() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }
