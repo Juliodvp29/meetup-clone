@@ -23,5 +23,9 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./features/dashboard/pages/dashboard/dashboard')
       .then(m => m.DashboardComponent)
+},
+{
+  path: 'home',
+  loadComponent: () => import('./features/home/pages/home/home').then((m) => m.HomeComponent),
 }
 ];

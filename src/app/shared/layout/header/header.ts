@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { AuthService } from '@/app/core/services/auth';
 
 @Component({
   standalone: true,
   selector: 'app-header',
-  imports: [ButtonModule],
+  imports: [ButtonModule, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -16,6 +16,10 @@ export class HeaderComponent {
 
   logout() {
     this.auth.logout();
+    this.router.navigate(['/login']);
+  }
+
+  login() {
     this.router.navigate(['/login']);
   }
 }

@@ -1,11 +1,11 @@
 <header class="relative bg-white shadow-sm">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
     <div class="flex items-center gap-4">
-      <h1 class="text-xl font-bold text-primary">Meetup</h1>
+      <h1 class="text-xl font-bold text-primary cursor-pointer" routerLink="/">Meetup</h1>
       <nav class="hidden md:flex gap-6 text-sm text-slate-600">
-        <a href="#" class="transition hover:text-primary">Explore</a>
-        <a href="#" class="transition hover:text-primary">Groups</a>
-        <a href="#" class="transition hover:text-primary">Events</a>
+        <a routerLink="/home" class="transition hover:text-primary cursor-pointer">Explore</a>
+        <a routerLink="/" class="transition hover:text-primary cursor-pointer">Groups</a>
+        <a routerLink="/dashboard" class="transition hover:text-primary cursor-pointer">Events</a>
       </nav>
     </div>
 
@@ -16,6 +16,14 @@
         label="Log out"
         class="p-button-text text-primary"
         (click)="logout()"
+      ></button>
+    }@else{
+      <button
+        pButton
+        type="button"
+        label="Log in"
+        class="p-button-text text-primary"
+        (click)="login()"
       ></button>
     }
   </div>
